@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello VUE</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+body{
+    text-align: center;
+}
+</style>
+<body>
+  <div id="user-input">
+        <p>{{ msg }}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+  </div>
+  <script>
+      var app = new Vue({
+          el:'#user-input',
+          data: {
+              msg: "这里是中国"
+          },
+          methods: {
+              reverseMessage: function(){
+                  this.msg = this.msg.split('').reverse().join('')
+              }
+          }
+
+      });
+  </script>
+</body>
+
+</html>

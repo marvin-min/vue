@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>双向绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+body{
+    text-align: center;
+}
+</style>
+<body>
+  <div id="b-binding">
+        <p>{{ msg }}</p>
+        <input v-model="msg">
+  </div>
+  <script>
+      var app = new Vue({
+          el:'#b-binding',
+          data: {
+              msg: "这里是中国"
+          }
+      });
+  </script>
+</body>
+
+</html>

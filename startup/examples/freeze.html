@@ -22,23 +22,23 @@
       var app = new Vue({
         el: "#app",
         data: data,
-        beforeCreate: function(){
-            console.log("---*beforeCreate*---")
+        beforeCreate: function() {
+          console.log("---*beforeCreate*---");
         },
-        created: function(){
-            console.log("---*created*---")
+        created: function() {
+          console.log("---*created*---");
         },
-        beforeMounted: function(){
-            console.log("---*beforeMounted*---")
+        beforeMounted: function() {
+          console.log("---*beforeMounted*---");
         },
-        mounted: function(){
-            console.log("---*mounted*---")
+        mounted: function() {
+          console.log("---*mounted*---");
         },
-        updated: function(){
-            console.log("---*updated*---")
+        updated: function() {
+          console.log("---*updated*---");
         },
-        destroyed: function(){
-            console.log("---*destroyed*---")
+        destroyed: function() {
+          console.log("---*destroyed*---");
         }
       });
       app.$data === data;

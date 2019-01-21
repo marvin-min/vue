@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>双向绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div id="b-binding">
+      <ol>
+        <todo-item
+          v-for="lang in languages"
+          v-bind:todo="lang"
+          v-bind:key="lang.id"
+        >
+        </todo-item>
+      </ol>
+      <p>{{ msg }}</p>
+      <input v-model="msg" />
+    </div>
+    <script>
+      Vue.component("todo-item", {
+        props: ["todo"],
+        template: "<li>{{todo.text}}</li>"
+      });
+      var app = new Vue({
+        el: "#b-binding",
+        data: {
+          languages: [
+            { id: 0, text: "English" },
+            { id: 1, text: "中文" },
+            { id: 2, text: "繁体中文" }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

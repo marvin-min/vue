@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <title>模板语法</title>
   </head>
   <body>
@@ -15,6 +19,12 @@
       <button v-bind:disabled="disabed">Edit</button>
       <a v-on:click="showMsg">提醒我</a>
       <a @click="showMsg">提醒我</a>
+      <div id="app">
+        <el-button @click="visible = true">Button</el-button>
+        <el-dialog :visible.sync="visible" title="Hello world">
+          <p>Try Element</p>
+        </el-dialog>
+      </div>
     </div>
     <script>
       var app = new Vue({
@@ -22,7 +32,8 @@
         data: {
           rawHtml:
             ' <div style="color:red">Hello Html</div>' + 1 + "<h1>ok</h1>",
-          disabed: false
+          disabed: false,
+          visible: false
         },
         methods: {
           showMsg: function() {
@@ -33,3 +44,4 @@
     </script>
   </body>
 </html>
+ 

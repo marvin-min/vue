@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>绑定HTMLClass</title>
+    <style>
+      .disable {
+        background-color: #fefeae;
+      }
+      .active {
+        color: chartreuse;
+      }
+      .text-danger {
+        background-color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button v-bind:class="{disable: isDisabled}">按钮</button>
+      <div v-bind:class="[activeClass, errorClass]">sfasfasd</div>
+      <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+        asdfadsfs
+      </div>
+      <div v-bind:style="styleObject">
+        styleObject: { color: 'red', fontSize: '13px' }
+      </div>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          isDisabled: true,
+          activeClass: "active",
+          errorClass: "text-danger",
+          activeColor: "red",
+          fontSize: 30,
+          styleObject: {
+            color: "red",
+            fontSize: "13px"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

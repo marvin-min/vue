@@ -8,4 +8,4 @@
 - https://github.com/wxsms/uiv
 
 
-看到事件处理了
+看到组件基础https://cn.vuejs.org/v2/guide/components.html

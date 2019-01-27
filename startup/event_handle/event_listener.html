@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>事件监听</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <style></style>
+  <body>
+    <div id="app">
+    <a href="https://cn.vuejs.org/v2/guide/events.html">事件监听</a>
+      <button @click="counter += 1">+1</button>
+      <p>The button above has been clicked {{ counter }} times.</p>
+      <button @click="sayHello('Hi')">Say Hello</button>
+      <button @click="sayHello('What')">Say What</button>
+      <div   v-on:scroll.passive="onScroll" style="margin-top:50px;max-height:30px;width:50px;overflow-y:scroll; overflow-x:scroll;">
+        1<br/>
+        2<br/>
+        3<br/>
+        4<br/>
+        6<br/>
+        7<br/>
+        8<br/>
+        9<br/>
+        0<br/>
+      </div>
+      <input @keyup.enter="enter"/>
+    </div>
+    <script>
+      var app2 = new Vue({
+        el: "#app",
+        data: {
+          counter: 0,
+          name: "Vue.js"
+        },
+        methods: {
+          sayHello: function(msg) {
+            console.log(event)
+            // `this` 在方法里指向当前 Vue 实例
+            alert("Hello " + msg + "! +1 按钮被点击了"+this.counter+"次！");
+            // `event` 是原生 DOM 事件
+            if (event) {
+              alert(event.target.tagName);
+            }
+          },
+          onScroll:function(){
+              console.log('scroll')
+          },
+          enter:function(){
+              alert("do login....")
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

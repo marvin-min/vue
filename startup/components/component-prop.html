@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>组件</title>
+  </head>
+  <body>
+    <div id="app">
+      <blog-post v-for="post in posts" :key="post.id" :post="post"></blog-post>
+       
+    </div>
+
+    <script>
+      Vue.component("blog-post", {
+        props:['post'],
+        template:
+          '<h3>{{post.id}}. {{post.title}}</h3>'
+      });
+      var app = new Vue({
+        el: "#app",
+        data: {
+          posts: [
+            {id:1,title:"Vue入门教程"}
+            ,{id:2,title:"Element-ui入门教程"}
+            ,{id:3,title:"Vuex精进"}
+            ,{id:4,title:"Vuex源码解析"}
+          ]
+        },
+
+        methods: {}
+      });
+    </script>
+  </body>
+</html>

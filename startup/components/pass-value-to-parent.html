@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>组件</title>
+  </head>
+  <body>
+    更多示例参考：https://cn.vuejs.org/v2/guide/components.html
+    <div id="app" >
+        <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post v-for="post in posts" :key="post.id" :post="post" @enlarge-text="postFontSize += 0.1"></blog-post>
+       </div>
+       
+    </div>
+ 
+    <script>
+      Vue.component("blog-post", {
+        props:['post'],
+        template:
+          '<div id="post-item"><h3>{{post.id}}. {{post.title}}</h3><br/><button @click="$emit(\'enlarge-text\')">增大字号</button></div>'
+      });
+      var app = new Vue({
+        el: "#app",
+        data: {
+          posts: [
+            {id:1,title:"Vue入门教程"}
+            ,{id:2,title:"Element-ui入门教程"}
+            ,{id:3,title:"Vuex精进"}
+            ,{id:4,title:"Vuex源码解析"}
+          ],
+          postFontSize:1
+        },
+
+        methods: {
+          showOk: function(){
+            alert('ok');
+          
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

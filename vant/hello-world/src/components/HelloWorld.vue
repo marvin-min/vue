@@ -20,6 +20,8 @@
       <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
     </ul>
     <h3>Ecosystem</h3>
+    <my-button>asdasdsdfgdfghfgh</my-button>
+    <my-picker :columns="columns" @change="onChange" />
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
@@ -31,10 +33,26 @@
 </template>
 
 <script>
+import { Button,Picker ,Toast } from 'vant';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+    data() {
+    return {
+      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+    };
+  },
+  components:{
+    'my-button':Button,
+    'my-picker':Picker 
+  },
+    methods: {
+    onChange(picker, value, index) {
+      Toast(`当前值：${value}, 当前索引：${index}`);
+    }
   }
 }
 </script>

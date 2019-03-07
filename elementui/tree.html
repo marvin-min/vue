@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>公式维护</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/element-ui/2.5.4/theme-chalk/index.css">
+    <script src="https://cdn.bootcss.com/vue/2.5.22/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.bootcss.com/element-ui/2.5.4/index.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.core.js"></script>
+</head>
+<body>
+<div id="tree">
+    <el-tree
+    :data="data6"
+    node-key="id"
+    default-expand-all
+  >
+  </el-tree>
+  
+</div>
+<script>
+ var vm = new Vue({
+            el: "#tree",
+           data:{
+            data6: [{
+                id: 1,
+                label: '一级 1',
+                children: [{
+                    id: 4,
+                    label: '二级 1-1',
+                    children: [{
+                    id: 9,
+                    label: '三级 1-1-1'
+                    }, {
+                    id: 10,
+                    label: '三级 1-1-2'
+                    }]
+                }]
+                }, {
+                id: 2,
+                label: '一级 2',
+                children: [{
+                    id: 5,
+                    label: '二级 2-1'
+                }, {
+                    id: 6,
+                    label: '二级 2-2'
+                }]
+                }, {
+                id: 3,
+                label: '一级 3',
+                }],
+                defaultProps: {
+                children: 'children',
+                label: 'label'
+                }
+           }
+        });
+</script>
+</body>
+</html>

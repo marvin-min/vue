@@ -8,6 +8,5 @@
 - https://github.com/wxsms/uiv
 
 
-看到组件基础https://cn.vuejs.org/v2/guide/components.html
-
+看到https://cn.vuejs.org/v2/guide/components-props.html
 看到: 组件上使用 v-model

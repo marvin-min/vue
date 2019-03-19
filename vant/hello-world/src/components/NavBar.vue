@@ -1,10 +1,10 @@
 <template>
   <div class="nav">
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
-      <van-tabbar-item icon="friends-o" info="5" @click="goToTag()">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o" info="20" @click="goToSetting()">标签</van-tabbar-item>
+      <van-tabbar-item icon="home-o">任务</van-tabbar-item>
+      <van-tabbar-item icon="search" dot>功能</van-tabbar-item>
+      <van-tabbar-item icon="friends-o" info="5" @click="goToTag()">记录</van-tabbar-item>
+      <van-tabbar-item icon="setting-o" info="20" @click="goToSetting()">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
